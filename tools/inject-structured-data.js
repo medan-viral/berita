@@ -6,7 +6,7 @@ const glob = require("fast-glob");
 // === Konfigurasi dasar ===
 const publisher = "Daily Indonesia News";
 const logoUrl = "https://medan-viral.github.io/logo.png";
-const baseUrl = "https://medan-viral.github.io/new";
+const baseUrl = "https://medan-viral.github.io/berita/";
 const today = new Date().toISOString().split("T")[0];
 
 // === Proses file HTML ===
