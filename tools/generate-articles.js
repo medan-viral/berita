@@ -3,7 +3,7 @@ const path = require("path");
 const fg = require("fast-glob");
 const cheerio = require("cheerio");
 
-const baseUrl = "https://medan-viral.github.io/new";
+const baseUrl = "https://medan-viral.github.io/berita";
 
 (async () => {
   const htmlFiles = await fg(["**/*.html", "!node_modules/**", "!**/404.html", "!google*.html"]);
