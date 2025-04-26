@@ -1,0 +1,65 @@
+name: Generate RSS and Sitemap
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'  # Auto jalan tiap 10 menit
+
+concurrency:
+  group: auto-generate
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install cheerio fast-glob
+
+      - name: Generate robots.txt
+        run: node tools/generate-robots.js
+
+      - name: Generate rss.xml
+        run: node tools/generate-rss.js
+
+      - name: Generate sitemap.xml
+        run: node tools/generate-sitemap.js
+
+      - name: Generate artikel.json
+        run: node tools/generate-articles.js
+
+      - name: Inject Structured Data
+        run: node tools/inject-structured-data.js
+
+      - name: Inject OpenGraph Tags
+        run: node tools/inject-og-tags.js
+
+      - name: Commit and Push Generated Files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git fetch --all
+          git reset --hard origin/main
+          git clean -fd
+          git add rss.xml sitemap.xml robots.txt artikel.json || true
+          git commit -m "Update generated files" || echo "No changes"
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Delay before ping
+        run: sleep 10
+
+      - name: Ping Google to Submit Sitemap
+        run: curl https://www.google.com/ping?sitemap=https://dailyindonesianews.github.io/berita-terupdate/sitemap.xml
+
+      - name: Ping Bing to Submit Sitemap
+        run: curl https://www.bing.com/ping?sitemap=https://dailyindonesianews.github.io/berita-terupdate/sitemap.xml
