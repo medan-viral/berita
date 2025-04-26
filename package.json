@@ -1,0 +1,13 @@
+{
+  "name": "berita-terupdate",
+  "version": "1.0.0",
+  "description": "Auto generate RSS, sitemap, robots.txt, and artikel.json for GitHub Pages",
+  "main": "index.js",
+  "scripts": {
+    "start": "node tools/generate-sitemap.js"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
