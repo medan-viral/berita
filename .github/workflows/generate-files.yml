@@ -59,7 +59,7 @@ jobs:
         run: sleep 10
 
       - name: Ping Google to Submit Sitemap
-        run: curl https://www.google.com/ping?sitemap=https://medan-viral.github.io/new/sitemap.xml
+        run: curl https://www.google.com/ping?sitemap=https://medan-viral.github.io/berita/sitemap.xml
 
       - name: Ping Bing to Submit Sitemap
-        run: curl https://www.bing.com/ping?sitemap=https://medan-viral.github.io/new/sitemap.xml
+        run: curl https://www.bing.com/ping?sitemap=https://medan-viral.github.io/berita/sitemap.xml
