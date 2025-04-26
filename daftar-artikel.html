@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Artikel Terbaru</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; }
+    h1 { text-align: center; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 1.2rem; }
+    a { text-decoration: none; color: #0066cc; font-weight: bold; }
+    .date { font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>📰 Daftar Artikel Terbaru</h1>
+  <ul id="article-list"></ul>
+
+  <script>
+    fetch('artikel.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('article-list');
+        data.forEach(article => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${article.link}" target="_blank">${article.title}</a>
+            <div class="date">📅 ${article.date}</div>
+          `;
+          list.appendChild(li);
+        });
+      })
+      .catch(() => {
+        document.getElementById('article-list').innerHTML = "<li>Gagal memuat daftar artikel.</li>";
+      });
+  </script>
+</body>
+</html>
