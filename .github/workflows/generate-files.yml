@@ -44,6 +44,9 @@ jobs:
       - name: Inject OpenGraph Tags
         run: node tools/inject-og-tags.js
 
+      - name: Run Generate All Script
+        run: node tools/generate-all.js
+
       - name: Commit and Push Generated Files
         run: |
           git config user.name "github-actions"
