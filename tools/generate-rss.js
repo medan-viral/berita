@@ -16,7 +16,7 @@ try {
   <rss version="2.0">
     <channel>
       <title>Daily Indonesia News</title>
-      <link>https://https://medan-viral.github.io/new/</link>
+      <link>https://https://medan-viral.github.io/berita/</link>
       <description>Berita Terupdate Hari Ini</description>
       ${rssItems}
     </channel>
