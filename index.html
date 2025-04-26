@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ Catur777 – Slot Dana Mahjong Viral</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #FFD700, #8B0000);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    /* Navigation */
+    .nav {
+      background-color: #8B0000;
+      overflow: hidden;
+    }
+
+    .nav a {
+      float: left;
+      display: block;
+      color: #FFD700;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav a:hover {
+      background-color: #FFD700;
+      color: #8B0000;
+    }
+
+    @media screen and (max-width: 600px) {
+      .nav a {
+        float: none;
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+      }
+    }
+
+    /* FAQ Section */
+    .faq {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      background-color: #f1f1f1;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.5em;
+    }
+
+    .faq-question.active::after {
+      content: '-';
+    }
+
+    .faq-answer {
+      padding: 15px;
+      display: none;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Selamat Datang di Catur777</h1>
+    <p>Platform Slot Dana Mahjong Terpercaya</p>
+  </div>
+
+  <div class="nav">
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+
+  <div class="faq">
+    <h2>FAQ Catur777 – Slot Dana Mahjong Viral</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">Apa itu Catur777?</div>
+      <div class="faq-answer">
+        Catur777 adalah platform slot online terpercaya yang menawarkan berbagai permainan menarik, termasuk Mahjong, dengan metode deposit yang mudah melalui Dana.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Mengapa Catur777 menjadi viral?</div>
+      <div class="faq-answer">
+        Catur777 menjadi viral karena menawarkan kemenangan besar dalam waktu singkat, terutama pada permainan Mahjong, serta kemudahan deposit menggunakan Dana.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Bagaimana cara deposit menggunakan Dana di Catur777?</div>
+      <div class="faq-answer">
+        Anda dapat melakukan deposit dengan memilih metode Dana di menu deposit, memasukkan jumlah yang diinginkan, dan mengikuti instruksi yang diberikan untuk menyelesaikan transaksi.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Apakah Catur777 aman dan terpercaya?</div>
+      <div class="faq-answer">
+        Ya, Catur777 memiliki sistem keamanan yang canggih dan telah dipercaya oleh banyak pemain slot online di Indonesia.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Bagaimana cara bermain Mahjong di Catur777?</div>
+      <div class="faq-answer">
+        Setelah mendaftar dan melakukan deposit, Anda dapat memilih permainan Mahjong dari daftar permainan yang tersedia dan mulai bermain sesuai dengan aturan yang berlaku.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isActive = question.classList.contains('active');
+
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+
+        // Toggle current answer
+        if (!isActive) {
+          answer.style.display = 'block';
+          question.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
