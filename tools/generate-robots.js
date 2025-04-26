@@ -5,7 +5,7 @@ const content = `
 User-agent: *
 Disallow:
 
-Sitemap: https://medan-viral.github.io/new/sitemap.xml
+Sitemap: https://medan-viral.github.io/berita/sitemap.xml
 `.trim();
 
 fs.writeFileSync('robots.txt', content);
